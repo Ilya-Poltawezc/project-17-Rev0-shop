@@ -1,0 +1,81 @@
+@use '../../styles/helpers/' as *;
+
+.header {
+    &__div {
+        // background: url('../../assets/images/header_img.png') center/50% no-repeat;
+        display: flex;
+        justify-content: space-between;
+
+        &__div1 {
+            position: relative;
+            z-index: 10;
+            padding-block: rem(62);
+            padding-left: rem(130);
+            display: flex;
+            flex-direction: column;
+            align-items: start; 
+            justify-content: space-between;  
+
+            &__link {
+                width: rem(124);
+                height: rem(40);
+            }
+
+            &__block {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                row-gap: rem(10);
+
+                &__h1 {
+                    text-transform: uppercase;
+                }
+
+                &__b {
+                    text-transform: uppercase;
+                    color: var(--color-light);
+                    padding: rem(5);
+                    background-color: var(--color-brown);
+                }
+            }
+        }
+
+        &__div2 {
+            background-color: #415167;
+            padding-block: rem(62);
+            padding-left: rem(55);
+            padding-right: rem(130);
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(120);
+
+            &__bascket {
+                background-color: transparent;
+                border: none;
+                width: rem(24);
+                aspect-ratio: 1;
+                color: var(--color-light);
+
+                @include hover {
+                    color: var(--color-brown);
+                }
+            }
+
+            &__nav {
+                &__list {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: rem(20);
+
+                    &__item {
+                        &__link {
+                            text-transform: uppercase;
+                            font-size: rem(16);
+                            color: var(--color-light);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
