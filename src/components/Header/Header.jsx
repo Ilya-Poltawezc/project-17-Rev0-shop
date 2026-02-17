@@ -18,7 +18,7 @@ export default function Header() {
                         <h1 className={styles.header__div__div1__block__h1}>coffee</h1>
                     </div>
                 </div>
-                <img className={styles.header__div__img} src={header_img} alt="" />
+                <img width={690} className={styles.header__div__img} src={header_img} alt="" />
                 <div className={styles.header__div__div2}>
                     <button className={styles.header__div__div2__bascket}>
                         <Backet />

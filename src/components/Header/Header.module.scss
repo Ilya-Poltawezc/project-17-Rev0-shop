@@ -2,9 +2,16 @@
 
 .header {
     &__div {
-        // background: url('../../assets/images/header_img.png') center/50% no-repeat;
+        position: relative;
+        // background: url('../../assets/images/header_img.png') center/60% no-repeat;
         display: flex;
         justify-content: space-between;
+
+        &__img {
+            position: absolute;
+            height: 100%;
+            left: calc(100% - 71.5%);
+        }
 
         &__div1 {
             position: relative;
@@ -41,6 +48,8 @@
         }
 
         &__div2 {
+            position: relative;
+            z-index: 10;
             background-color: #415167;
             padding-block: rem(62);
             padding-left: rem(55);
