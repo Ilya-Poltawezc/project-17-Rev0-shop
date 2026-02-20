@@ -1,0 +1,71 @@
+@use '../../../styles/helpers/' as *;
+
+.catalog {
+    &__div {
+        padding: rem(130);
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(72);
+
+        &__div1 {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(6);
+            align-items: center;
+
+            &__p {
+                font-size: rem(20);
+                font-weight: 600;
+            }
+        }
+
+        &__div2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: rem(30);
+            row-gap: rem(30);
+            place-items: center center;
+
+            &__card {
+                max-height: rem(256);
+                display: flex;
+                align-items: center;
+                background-color: var(--color-light);
+                box-shadow: 0 4px 24px 0 rgba(205, 205, 205, 0.5);
+
+                &__img {
+                    background-color: var(--color-Ligthgrey);
+                }
+
+                &__block {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: rem(20);
+                    padding-inline: rem(44);
+
+                    &__cell {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: rem(8);
+
+                        &__price {
+                            font-size: rem(20);
+                            font-weight: 600;
+                            color: var(--color-brown);
+                        }
+                    }
+
+                    &__label {
+                        font-size: rem(16);
+                    }
+
+                    &__buttons {
+                        display: flex;
+                        align-items: center;
+                        column-gap: rem(18);
+                    }
+                }
+            }
+        }
+    }
+}

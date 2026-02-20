@@ -1,0 +1,29 @@
+@use '../../styles/helpers/' as *;
+
+.buttonBuy {
+    padding: rem(6) rem(15);
+    border-radius: rem(19);
+    background-color: var(--color-brown);
+    color: var(--color-light);
+    font-size: rem(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+
+    @include hover {
+        transform: scale(1.1);
+    }
+}
+
+.buttonDetail {
+    background-color: transparent;
+    color: var(--color-dark);
+    font-size: rem(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+
+    @include hover {
+        transform: scale(1.1);
+    }
+}
