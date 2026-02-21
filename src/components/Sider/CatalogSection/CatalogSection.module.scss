@@ -1,8 +1,11 @@
 @use '../../../styles/helpers/' as *;
 
 .catalog {
+    background: url('../../../assets/images/catalog/BG.svg') left/27% no-repeat;
     &__div {
-        padding: rem(130);
+        padding-left: rem(130);
+        padding-top: rem(70);
+        padding-bottom: rem(130);
         display: flex;
         flex-direction: column;
         row-gap: rem(72);
@@ -22,9 +25,11 @@
         &__div2 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            column-gap: rem(30);
-            row-gap: rem(30);
-            place-items: center center;
+            gap: rem(30);
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            width: 100%;
+            height: rem(650);
 
             &__card {
                 max-height: rem(256);
@@ -32,6 +37,8 @@
                 align-items: center;
                 background-color: var(--color-light);
                 box-shadow: 0 4px 24px 0 rgba(205, 205, 205, 0.5);
+                min-width: rem(560);
+                flex-shrink: 0;
 
                 &__img {
                     background-color: var(--color-Ligthgrey);
@@ -67,5 +74,42 @@
                 }
             }
         }
+
+        &__spaw {
+            position: absolute;
+            right: 0;
+            z-index: 10;
+            top: calc(100% - 58%);
+            border: none;
+            border-radius: 50%;
+            width: rem(48);
+            aspect-ratio: 1;
+            color: var(--color-light);
+            background-color: var(--color-brown);
+            margin-right: rem(65);
+        }
     }
+
+    &__container {
+        position: relative;
+        overflow: hidden;  
+        
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: rem(140);
+            height: 100%;
+            pointer-events: none; 
+            background: linear-gradient(
+               to left,
+             white 0%,
+             rgba(255, 255, 255, 0.3) 100%
+            )
+        }
+    }
+}
+.catalog__div__div2::-webkit-scrollbar {
+    display: none;
 }

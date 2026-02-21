@@ -3,8 +3,18 @@ import { catalog } from "./catalog.data"
 import ButtomBuy from "../../Buttons/ButtonBuy"
 import ButtomDatail from "../../Buttons/ButtonDetail"
 import Swap from "../../iconsComponents/Swap"
+import { useRef } from "react"
 
 export default function CatalogSection() {
+    const containerRef = useRef(null)
+
+    const scrollRight = () => {
+    containerRef.current.scrollBy({
+        left: 500,
+        behavior: "smooth",
+        })
+    }
+
     return (
         <section className={styles.catalog}>
             <div className={styles.catalog__div}>
@@ -12,7 +22,8 @@ export default function CatalogSection() {
                     <p className={styles.catalog__div__div1__p}>Choose Your Favorite</p>
                     <h2 className={styles.catalog__div__div1__h2}>PERFECT TASTE</h2>
                 </div>
-                <div className={styles.catalog__div__div2}>
+                <div className={styles.catalog__container}>
+                    <div ref={containerRef} className={styles.catalog__div__div2}>
                     {catalog.map(({id, img, price, title, label}) => (
                         <article key={id} className={styles.catalog__div__div2__card}>
                             <img className={styles.catalog__div__div2__card__img} src={img} alt="" />
@@ -30,9 +41,10 @@ export default function CatalogSection() {
                         </article>
                     ))}
                 </div>
-                <button className={styles.catalog__div__spaw}>
+                <button  onClick={scrollRight} className={styles.catalog__div__spaw}>
                     <Swap />
                 </button>
+                </div>
             </div>
         </section>
     )
