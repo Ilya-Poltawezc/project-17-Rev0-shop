@@ -5,13 +5,13 @@ import GiftTwo from '../../iconsComponents/Gifts/GiftTwo'
 import ButtomBuy from '../../Buttons/ButtonBuy'
 import ButtomDatail from '../../Buttons/ButtonDetail'
 
-export default function GiftCardOne() {
+export default function GiftCardThree() {
     return (
         <article className={styles.gift__block__cardOne}>
             <img className={styles.gift__block__cardOne__img} src={One} alt="" />
             <div className={styles.gift__block__cardOne__div}>
                 <div className={styles.gift__block__cardOne__div__block1}>
-                    <p className={styles.gift__block__cardOne__div__block1__price}>285.000</p>
+                    <p className={styles.gift__block__cardOne__div__block1__price}>165.000</p>
                     <h3 className={styles.gift__block__cardOne__div__block1__title}>Giftset "Vietnamese Filter Coffee"</h3>
                     <p className={styles.gift__block__cardOne__div__block1__descrp}>
                         A perfect gift for coffee connoisseurs. Revo carefully selects its coffee beans, roasts them using technology and techniques learned from renowned artisans, and combines them with the love and passion of coffee makers… creating pure cups of coffee just for you.
@@ -29,7 +29,7 @@ export default function GiftCardOne() {
                         <GiftTwo />
                         <div className={styles.gift__block__cardOne__div__block2__cell__desc}>
                             <p className={styles.gift__block__cardOne__div__block2__cell__desc__p}>Elevation</p>
-                            <p className={styles.gift__block__cardOne__div__block2__cell__desc__p}>700 - 800m</p>
+                            <p className={styles.gift__block__cardOne__div__block2__cell__desc__p}>200 - 500m</p>
                         </div>
                     </div>
                 </div>

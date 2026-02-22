@@ -1,7 +1,13 @@
 import styles from './SectionGift.module.scss'
 import GiftCardOne from './GiftCardOne'
+import GiftCardTwo from './GiftCardTwo'
+import GiftCardThree from './GiftCardThree'
+import { useState } from 'react'
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function GiftSection() {
+    const [tab, setTab] = useState('main')
+
     return (
         <section className={styles.gift}>
             <div className={styles.gift__div}>
@@ -11,12 +17,27 @@ export default function GiftSection() {
                 </div>
                 <div className={styles.gift__div__div2}>
                     <div className={styles.gift__block}>
-                        <GiftCardOne />
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={tab}
+                                initial={{ opacity: 0, x: 20, scale: 0.95 }}
+                                animate={{ opacity: 1, x: 0, scale: 1 }}
+                                exit={{ opacity: 0, x: -20, scale: 0.95 }}
+                                transition={{
+                                    duration: 0.3,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                {tab === 'main' && <GiftCardOne />}
+                                {tab === 'cardTwo' && <GiftCardTwo />}
+                                {tab === 'cardThree' && <GiftCardThree />}
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
                     <div className={styles.gift__div__div2__buttons}>
-                        <button className={styles.gift__div__div2__buttons__button}>1</button>
-                        <button className={styles.gift__div__div2__buttons__button}>2</button>
-                        <button className={styles.gift__div__div2__buttons__button}>3</button>
+                       <button onClick={() => setTab('main')} className={`${styles.gift__div__div2__buttons__button} ${tab === 'main' ? styles.gift__div__div2__buttons__buttonActive : ''}`}>1</button>
+                       <button onClick={() => setTab('cardTwo')} className={`${styles.gift__div__div2__buttons__button} ${tab === 'cardTwo' ? styles.gift__div__div2__buttons__buttonActive : ''}`}>2</button>
+                       <button onClick={() => setTab('cardThree')} className={`${styles.gift__div__div2__buttons__button} ${tab === 'cardThree' ? styles.gift__div__div2__buttons__buttonActive : ''}`}>3</button>
                     </div>
                 </div>
             </div>
