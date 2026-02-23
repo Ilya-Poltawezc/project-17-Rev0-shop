@@ -1,0 +1,16 @@
+@use '../../styles/helpers/' as *;
+
+.footer {
+    background-color: var(--color-Ligthgrey);
+    padding: rem(20);
+
+    &__div {
+        justify-content: center;
+
+        &__p {
+            font-size: rem(16);
+            font-weight: 300;
+            color: #415167;    
+        }
+    }
+}

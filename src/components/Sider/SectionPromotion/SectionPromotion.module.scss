@@ -1,0 +1,111 @@
+@use '../../../styles/helpers/' as *;
+
+.promotion {
+    background: url('../../../assets/images/catalog/BG.svg') right/30% no-repeat;
+    &__div {
+        padding-top: rem(70);
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(72);
+
+        &__div1 {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(6);
+            align-items: center;
+
+            &__p {
+                font-size: rem(20);
+                font-weight: 600;
+            }
+        }
+
+        &__div2 {
+            padding-left: rem(130);
+            padding-bottom: rem(90);
+            display: flex;
+            column-gap: rem(30);
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+
+            &__card {
+                min-height: rem(560);
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+                background-color: var(--color-light);
+                box-shadow: 0 4px 24px 0 rgba(205, 205, 205, 0.5);
+                min-width: rem(360);
+                
+
+                &__img {
+                    background-color: var(--color-Ligthgrey);
+                }
+
+                &__block {
+                    display: flex;
+                    justify-content: start;
+                    flex-direction: column;
+                    row-gap: rem(20);
+                    padding: rem(30);
+
+                    &__cell {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: rem(8);
+
+                        &__div {
+                            display: flex;
+                            column-gap: rem(10);
+
+                            &__price {
+                                font-size: rem(20);
+                                font-weight: 600;
+                                color: var(--color-brown);
+                            }
+
+                            &__prom {
+                                font-size: rem(14);
+                                text-decoration: line-through;
+                                color: var(--color-greyText);
+                            }
+                        }
+                    }
+
+                    &__label {
+                        font-size: rem(16);
+                    }
+
+                    &__buttons {
+                        display: flex;
+                        align-items: center;
+                        column-gap: rem(18);
+                    }
+                }
+            }
+        }
+
+        &__spaw {
+            position: absolute;
+            right: 0;
+            z-index: 10;
+            top: calc(100% - 58%);
+            border: none;
+            border-radius: 50%;
+            width: rem(48);
+            aspect-ratio: 1;
+            color: var(--color-light);
+            background-color: var(--color-brown);
+            margin-right: rem(65);
+        }
+    }
+
+    &__container {
+        position: relative;
+        overflow: hidden;  
+    }
+}
+.promotion__div__div2::-webkit-scrollbar {
+    display: none;
+}
