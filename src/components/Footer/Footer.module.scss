@@ -5,6 +5,7 @@
     padding: rem(20);
 
     &__div {
+        display: flex;
         justify-content: center;
 
         &__p {

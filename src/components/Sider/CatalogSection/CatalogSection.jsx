@@ -3,9 +3,11 @@ import { catalog } from "./catalog.data"
 import ButtomBuy from "../../Buttons/ButtonBuy"
 import ButtomDatail from "../../Buttons/ButtonDetail"
 import Swap from "../../iconsComponents/Swap"
-import { useRef } from "react"
+import { useRef, useContext } from "react"
+import { CartContext } from "../../../context/CardContext"
 
 export default function CatalogSection() {
+    const { addToCart } = useContext(CartContext)
     const containerRef = useRef(null)
 
     const scrollRight = () => {
@@ -16,7 +18,7 @@ export default function CatalogSection() {
     }
 
     return (
-        <section className={styles.catalog}>
+        <section id="catalog" className={styles.catalog}>
             <div className={styles.catalog__div}>
                 <div className={styles.catalog__div__div1}>
                     <p className={styles.catalog__div__div1__p}>Choose Your Favorite</p>
@@ -24,17 +26,17 @@ export default function CatalogSection() {
                 </div>
                 <div className={styles.catalog__container}>
                     <div ref={containerRef} className={styles.catalog__div__div2}>
-                    {catalog.map(({id, img, price, title, label}) => (
-                        <article key={id} className={styles.catalog__div__div2__card}>
-                            <img className={styles.catalog__div__div2__card__img} src={img} alt="" />
+                    {catalog.map((product) => (
+                        <article key={product.id} className={styles.catalog__div__div2__card}>
+                            <img className={styles.catalog__div__div2__card__img} src={product.img} alt="" />
                             <div className={styles.catalog__div__div2__card__block}>
                                 <div className={styles.catalog__div__div2__card__block__cell}>
-                                    <p className={styles.catalog__div__div2__card__block__cell__price}>{price}</p>
-                                    <h3 className={styles.catalog__div__div2__card__block__cell__title}>{title}</h3>
+                                    <p className={styles.catalog__div__div2__card__block__cell__price}>{product.price}</p>
+                                    <h3 className={styles.catalog__div__div2__card__block__cell__title}>{product.title}</h3>
                                 </div>
-                                <p className={styles.catalog__div__div2__card__block__label}>{label}</p>
+                                <p className={styles.catalog__div__div2__card__block__label}>{product.label}</p>
                                 <div className={styles.catalog__div__div2__card__block__buttons}>
-                                    <ButtomBuy />
+                                    <ButtomBuy onClick={() => {addToCart(product)}} />
                                     <ButtomDatail />
                                 </div>
                             </div>

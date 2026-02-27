@@ -7,7 +7,7 @@ import Bartending from '../../iconsComponents/Build/Bartending'
 
 export default function BuildSection() {
     return (
-        <section className={styles.build}>
+        <section id='phin' className={styles.build}>
             <div className={clsx('container', styles.build__div)}>
                 <div className={styles.build__div__div1}>
                     <p className={styles.build__div__div1__description}>

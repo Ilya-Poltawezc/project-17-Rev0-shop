@@ -1,7 +1,7 @@
 import styles from './Buttons.module.scss'
 
-export default function ButtomBuy() {
+export default function ButtomBuy({onClick}) {
     return (
-        <button className={styles.buttonBuy}>buy now</button>
+        <button onClick={onClick} className={styles.buttonBuy}>buy now</button>
     )
 }

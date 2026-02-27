@@ -52,8 +52,7 @@
             z-index: 10;
             background-color: #415167;
             padding-block: rem(62);
-            padding-left: rem(55);
-            padding-right: rem(130);
+            padding-inline: rem(110);
             display: flex;
             flex-direction: column;
             row-gap: rem(120);
@@ -67,6 +66,26 @@
 
                 @include hover {
                     color: var(--color-brown);
+                }
+
+                &__count {
+                    position: absolute;
+                    right: calc(100% - 107%);
+                    bottom: calc(100% - 130%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: rem(20);
+                    aspect-ratio: 1;
+
+                    &__span {
+                        color: var(--color-light);
+                        font-size: rem(14);
+                        background-color: var(--color-primary);
+                        border-radius: 50%;
+                        width: rem(20);
+                        aspect-ratio: 1;
+                    }
                 }
             }
 
@@ -86,5 +105,149 @@
                 }
             }
         }
+    }
+
+    &__error {
+        top: calc(100% - 82%);
+        margin-left: rem(-140);
+        position: absolute;
+        padding: rem(20);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: rem(4);
+        max-height: 0;
+        opacity: 0;
+        background-color: var(--color-light);
+        transition: all 0.2s;
+
+        @include tablet {
+            z-index: 10;
+            top: calc(100% - 50%);
+            right: calc(100% - 98%);
+        }
+
+        @include mobile {
+            margin-left: rem(7);
+        }
+
+        &__p {
+            font-size: rem(14);
+            color: var(--color-greyText);
+        }
+    }
+
+    &__errorHide {
+        max-height: rem(20);
+        opacity: 1;
+    }
+
+    &__openBasket {
+        position: relative;
+        z-index: 10;
+        max-height: 0;
+        max-width: 460px;
+        overflow-y: scroll;
+        top: calc(100% - 80%);
+        margin-left: rem(-140);
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+        position: absolute;
+        padding: rem(10) rem(20);
+        background-color: var(--color-light);
+        opacity: 0;
+        transition: 0.3s;
+        pointer-events: none;
+
+        @include tablet {
+            top: calc(100% - 50%);
+            right: calc(100% - 98%);
+        }
+
+        @include mobile {
+            margin-left: rem(7);
+        }
+
+        &__card {
+            margin: rem(-20);
+            padding: rem(20);
+            display: flex;
+            align-items: center;
+            column-gap: rem(10);
+
+            &:hover {
+                background-color: rgba(204, 217, 242, 0.2);
+            }
+
+            &__block2 {
+                display: flex;
+                align-items: center;
+                column-gap: rem(50);
+
+                &__p {
+                    font-size: rem(14);
+                    color: var(--color-greyText);
+                }
+
+                &__span {
+                    font-size: rem(20);
+                    font-weight: 700;
+                }
+
+                &__btn {
+                    background-color: transparent;
+                    border: none;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        &__div {
+            margin: rem(-20);
+            z-index: 10;
+            position: sticky;
+            bottom: rem(-10);
+            padding: rem(10);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--color-light);
+            box-shadow: 0 -4px 10px 0 rgba(0, 13, 84, 0.1);
+
+            &__block1 {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(10);
+
+                &__p {
+                    font-size: rem(14);
+                }
+
+                &__price {
+                    font-size: rem(20);
+                    font-weight: 700;
+                }
+            }
+
+            &__button {
+                padding: rem(17) rem(40);
+                border: none;
+                background-color: var(--color-primary);
+                color: var(--color-light);
+                font-size: rem(16);
+                font-weight: 700;
+                border-radius: rem(4);
+            }
+        }
+    }
+
+    &__openBasketHide {
+        max-height: 50vh;
+        opacity: 1;
+        pointer-events: all;
     }
 }

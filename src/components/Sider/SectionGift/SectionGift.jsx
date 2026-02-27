@@ -9,7 +9,7 @@ export default function GiftSection() {
     const [tab, setTab] = useState('main')
 
     return (
-        <section className={styles.gift}>
+        <section id='giftset' className={styles.gift}>
             <div className={styles.gift__div}>
                 <div className={styles.gift__div__div1}>
                     <p className={styles.gift__div__div1__p}>Best Gift For Best Friend</p>
