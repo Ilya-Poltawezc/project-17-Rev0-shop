@@ -4,8 +4,10 @@ import GiftCardTwo from './GiftCardTwo'
 import GiftCardThree from './GiftCardThree'
 import { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
+// import { CartContext } from '../../../context/CardContext'
 
 export default function GiftSection() {
+    // const { addToCart } = useContext(CartContext)
     const [tab, setTab] = useState('main')
 
     return (

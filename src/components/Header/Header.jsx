@@ -5,6 +5,7 @@ import Backet from '../iconsComponents/Backet'
 import { list } from './data'
 import { CartContext } from '../../context/CardContext'
 import { useContext, useState } from 'react'
+import TrashIcon from '../iconsComponents/TrashIcon'
 
 export default function Header() {
     const { cart, removeFromCart, openCart } = useContext(CartContext)
@@ -31,11 +32,17 @@ export default function Header() {
                 </div>
                 <img width={690} className={styles.header__div__img} src={header_img} alt="" />
                 <div className={styles.header__div__div2}>
-                   <button onClick={() => setOpen(!open)} className={styles.header__div__div2__bascket} href="/"><Backet /></button>
-                {/* {Next we display the shopping cart itself, where they are added} */}
+                   <button onClick={() => setOpen(!open)} className={styles.header__div__div2__bascket} href="/">
+                    <Backet />
+                    <div className={styles.header__count}>
+                        {cart.length > 0 && (
+                        <span className={styles.header__count__span}>{cart.length}</span>
+                        )}
+                   </div>
+                    </button>
                   {cart.length === 0 ? <span className={`${styles.header__error} ${open ? styles.header__errorHide : ''}`}><p className={styles.header__error__p}>You haven't selected a product yet, go to the catalog!</p></span> : <div className={`${styles.header__openBasket} ${open ? styles.header__openBasketHide : ""}`}>
                         {cart.map((item) => (
-                      <div key={item.id} className={styles.header__openBasket__card}>
+                      <div key={`${item.id}-${item.quantity}`} className={styles.header__openBasket__card}>
                           <img width={100} height={60} src={item.image} alt={item.description} />
                       <div className={styles.header__openBasket__card__block2}>
                           <div>
@@ -43,7 +50,7 @@ export default function Header() {
                             <span className={styles.header__openBasket__card__block2__span}>{item.price}</span>
                           </div>
                           <button onClick={() => removeFromCart(item.id)} className={styles.header__openBasket__card__block2__btn}>
-                            delete
+                            <TrashIcon />
                           </button>
                       </div>
                     </div>

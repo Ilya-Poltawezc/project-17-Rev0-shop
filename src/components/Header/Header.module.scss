@@ -58,6 +58,7 @@
             row-gap: rem(120);
 
             &__bascket {
+                position: relative;
                 background-color: transparent;
                 border: none;
                 width: rem(24);
@@ -149,7 +150,7 @@
         max-width: 460px;
         overflow-y: scroll;
         top: calc(100% - 80%);
-        margin-left: rem(-140);
+        margin-left: rem(-170);
         display: flex;
         flex-direction: column;
         row-gap: rem(20);
@@ -181,9 +182,10 @@
             }
 
             &__block2 {
+                width: 100%;
                 display: flex;
                 align-items: center;
-                column-gap: rem(50);
+                justify-content: space-between;
 
                 &__p {
                     font-size: rem(14);
@@ -249,5 +251,25 @@
         max-height: 50vh;
         opacity: 1;
         pointer-events: all;
+    }
+
+    &__count {
+        position: absolute;
+        top: 0;
+        left: calc(100% - 30%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(20);
+        aspect-ratio: 1;
+
+        &__span {
+            color: var(--color-light);
+            font-size: rem(14);
+            background-color: var(--color-brown);
+            border-radius: 50%;
+            width: rem(20);
+            aspect-ratio: 1;
+        }
     }
 }

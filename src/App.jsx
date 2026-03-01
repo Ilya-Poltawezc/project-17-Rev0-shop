@@ -37,7 +37,7 @@ function App() {
             cart, 
             addToCart, 
             removeFromCart,   
-            openCart: () => {setIsCartOpen(true)}, 
+            openCart: () => setIsCartOpen(true), 
             closeCart: () => setIsCartOpen(false),
         }}>
         <Header />
